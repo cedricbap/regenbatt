@@ -2,7 +2,7 @@
 
 import React, { useMemo, useState } from "react";
 import Link from "next/link";
-import { notifyAdmin } from "@/lib/notifyAdmin";
+import { notifyAdmin } from "../../lib/notifyAdmin";
 
 const PRICE_URGENCE = 10000;
 

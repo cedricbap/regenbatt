@@ -1,7 +1,7 @@
 // app/api/notify-admin/route.ts
 import { NextResponse } from "next/server";
-import { supabaseAdmin } from "@/lib/supabaseAdmin";
-import { sendWhatsappToAdmin } from "@/lib/whatsapp";
+import { supabaseAdmin } from "../../../lib/supabaseAdmin";
+import { sendWhatsappToAdmin } from "../../../lib/whatsapp";
 
 // Normalisation simple Gabon (+241). Ajuste si tu veux.
 function normalizePhone(phone: string) {
