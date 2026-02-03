@@ -5,18 +5,18 @@ export default function Home() {
     <main className="min-h-screen flex flex-col justify-center items-center bg-gray-100 px-4">
       <div className="w-full max-w-md space-y-6">
         <h1 className="text-3xl font-bold text-center text-gray-800">
-          RechargBatt
+          RegenBatt
         </h1>
 
         <p className="text-center text-gray-600">
-          Jump start d’urgence • Régénération batterie 12V (atelier)
+          Jump start d’urgence • Régénération batterie 12V 
         </p>
 
         <Link
           href="/urgence"
           className="block w-full bg-red-600 text-white text-center py-5 rounded-xl text-xl font-semibold shadow hover:bg-red-700 transition"
         >
-          🚨 Batterie à plat (Urgence)
+          🚨 Batterie à plat:Démarrage impossible ( Intervention en Urgence) — 10000 FCFA
         </Link>
 
         <Link
