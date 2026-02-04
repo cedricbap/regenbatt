@@ -206,7 +206,7 @@ export default function HomePage() {
               8 000 FCFA
             </div>
             <div style={{ fontSize: 14, opacity: 0.9 }}>
-              Choisis le jour pour venir déposer ta batterie.
+              Choisissez la date et l'heure pour venir déposer votre batterie. La régénération dure quelques heures.
             </div>
           </div>
         </div>
