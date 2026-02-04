@@ -1,7 +1,24 @@
 "use client";
+
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HomePage() {
+  const cardLinkStyle: React.CSSProperties = {
+    display: "block",
+    textDecoration: "none",
+    color: "inherit",
+    borderRadius: 20,
+    cursor: "pointer",
+  };
+
+  const cardInnerBase: React.CSSProperties = {
+    borderRadius: 20,
+    padding: 22,
+    color: "#fff",
+    transition: "transform 160ms ease, filter 160ms ease",
+  };
+
   return (
     <main
       style={{
@@ -53,13 +70,7 @@ export default function HomePage() {
               ⚡ Service batterie 12V • Libreville
             </div>
 
-            <h1
-              style={{
-                fontSize: 42,
-                margin: "0 0 8px",
-                color: "#ffffff",
-              }}
-            >
+            <h1 style={{ fontSize: 42, margin: "0 0 8px", color: "#ffffff" }}>
               RegenBatt
             </h1>
 
@@ -82,27 +93,25 @@ export default function HomePage() {
                 marginBottom: 18,
               }}
             >
-              {["Réponse rapide", "Prix transparents", "WhatsApp / Web"].map(
-                (t) => (
-                  <div
-                    key={t}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 6,
-                      padding: "6px 12px",
-                      borderRadius: 999,
-                      background: "rgba(255,255,255,0.08)",
-                      fontSize: 13,
-                    }}
-                  >
-                    ✅ {t}
-                  </div>
-                )
-              )}
+              {["Réponse rapide", "Prix transparents", "WhatsApp / Web"].map((t) => (
+                <div
+                  key={t}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 6,
+                    padding: "6px 12px",
+                    borderRadius: 999,
+                    background: "rgba(255,255,255,0.08)",
+                    fontSize: 13,
+                  }}
+                >
+                  ✅ {t}
+                </div>
+              ))}
             </div>
 
-            {/* 👇 TEXTE DE GUIDAGE (BON ENDROIT) */}
+            {/* TEXTE DE GUIDAGE */}
             <div
               style={{
                 marginBottom: 22,
@@ -117,7 +126,9 @@ export default function HomePage() {
               👇 <strong>Clique sur le bouton qui correspond à ton besoin</strong>
               <br />
               <span style={{ fontSize: 13, color: "rgba(255,255,255,0.7)" }}>
-                Bouton rouge: Urgence = démarrage impossible, on vient te dépanner  <p></p> Bouton vert: Régénération = réparation + recharge batterie dans notre local
+                Bouton rouge : Urgence = démarrage impossible, on vient te dépanner
+                <br />
+                Bouton vert : Régénération = réparation + recharge batterie (au local)
               </span>
             </div>
           </div>
@@ -157,7 +168,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* ACTIONS */}
+        {/* ACTIONS (CLIQUABLES) */}
         <div
           style={{
             display: "grid",
@@ -167,48 +178,58 @@ export default function HomePage() {
           }}
         >
           {/* URGENCE */}
-          <div
-            style={{
-              background:
-                "linear-gradient(135deg, #ef4444 0%, #dc2626 100%)",
-              borderRadius: 20,
-              padding: 22,
-              color: "#fff",
-              boxShadow: "0 20px 40px rgba(239,68,68,0.35)",
-            }}
-          >
-            <div style={{ fontSize: 13, opacity: 0.9 }}>
-              🚨 Batterie à plat
+          <Link href="/urgence" style={cardLinkStyle} aria-label="Aller vers Démarrage forcé en urgence">
+            <div
+              style={{
+                ...cardInnerBase,
+                background: "linear-gradient(135deg, #ef4444 0%, #dc2626 100%)",
+                boxShadow: "0 20px 40px rgba(239,68,68,0.35)",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLDivElement).style.transform = "translateY(-2px)";
+                (e.currentTarget as HTMLDivElement).style.filter = "brightness(1.03)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLDivElement).style.transform = "translateY(0px)";
+                (e.currentTarget as HTMLDivElement).style.filter = "none";
+              }}
+            >
+              <div style={{ fontSize: 13, opacity: 0.9 }}>🚨 Batterie à plat</div>
+              <div style={{ fontSize: 22, fontWeight: 700, margin: "8px 0" }}>
+                Démarrage forcé en urgence — 10 000 FCFA
+              </div>
+              <div style={{ fontSize: 14, opacity: 0.9 }}>
+                Indique ta position et on te rejoint.
+              </div>
             </div>
-            <div style={{ fontSize: 22, fontWeight: 700, margin: "8px 0" }}>
-              Démarrage forcé en urgence — 10 000 FCFA
-            </div>
-            <div style={{ fontSize: 14, opacity: 0.9 }}>
-              Indique ta position et on te rejoint.
-            </div>
-          </div>
+          </Link>
 
           {/* REGEN */}
-          <div
-            style={{
-              background:
-                "linear-gradient(135deg, #10b981 0%, #059669 100%)",
-              borderRadius: 20,
-              padding: 22,
-              color: "#fff",
-              boxShadow: "0 20px 40px rgba(16,185,129,0.35)",
-            }}
-          >
-            <div style={{ fontSize: 13, opacity: 0.9 }}>
-              🔋 Régénération batterie
+          <Link href="/regeneration" style={cardLinkStyle} aria-label="Aller vers Régénération batterie">
+            <div
+              style={{
+                ...cardInnerBase,
+                background: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
+                boxShadow: "0 20px 40px rgba(16,185,129,0.35)",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLDivElement).style.transform = "translateY(-2px)";
+                (e.currentTarget as HTMLDivElement).style.filter = "brightness(1.03)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLDivElement).style.transform = "translateY(0px)";
+                (e.currentTarget as HTMLDivElement).style.filter = "none";
+              }}
+            >
+              <div style={{ fontSize: 13, opacity: 0.9 }}>🔋 Régénération batterie</div>
+              <div style={{ fontSize: 22, fontWeight: 700, margin: "8px 0" }}>
+                Réparation + recharge batterie — 8 000 FCFA
+              </div>
+              <div style={{ fontSize: 14, opacity: 0.9 }}>
+                Choisis la date et l&apos;heure pour venir déposer ta batterie. La régénération dure quelques heures.
+              </div>
             </div>
-            <div style={{ fontSize: 22, fontWeight: 700, margin: "8px 0" }}>
-             Réparation + recharge batterie — 8 000 FCFA
-            </div>
-            <div style={{ fontSize: 14, opacity: 0.9 }}>
-              Choisis la date et l'heure pour venir déposer ta batterie. La régénération dure quelques heures.
-            </div>
-          </div>
+          </Link>
         </div>
 
         {/* FOOTER */}
@@ -218,12 +239,14 @@ export default function HomePage() {
             display: "flex",
             justifyContent: "space-between",
             fontSize: 14,
-            color: "rgba(255,255,255,0.7)",
+            color: "rgba(255,255,255,0.75)",
+            borderTop: "1px solid rgba(255,255,255,0.08)",
+            paddingTop: 18,
           }}
         >
-          <a href="/contact" style={{ color: "#fff" }}>
+          <Link href="/contact" style={{ color: "rgba(255,255,255,0.85)" }}>
             À propos & Contact
-          </a>
+          </Link>
           <div>© 2026 RegenBatt</div>
         </div>
       </div>
