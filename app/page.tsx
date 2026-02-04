@@ -195,7 +195,7 @@ export default function HomePage() {
               8 000 FCFA
             </div>
             <div style={{ fontSize: 13, opacity: 0.9, marginTop: 8 }}>
-              Dépose ou rendez-vous selon ton besoin.
+              Choisis le jour pour venir déposer ta batterie
             </div>
           </Link>
         </div>
