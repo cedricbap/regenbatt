@@ -69,7 +69,7 @@ export default function HomePage() {
                 fontSize: 16,
               }}
             >
-              Jump start d’urgence • Régénération batterie 12V
+              Démarrage forcé en urgence • Régénération batterie 12V
             </p>
 
             {/* BADGES */}
