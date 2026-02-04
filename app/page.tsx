@@ -113,7 +113,7 @@ export default function HomePage() {
                 color: "rgba(255,255,255,0.9)",
               }}
             >
-              👇 <strong>Clique le bouton qui correspond à ton besoin</strong>
+              👇 <strong>Clique sur le bouton qui correspond à ton besoin</strong>
               <br />
               <span style={{ fontSize: 13, color: "rgba(255,255,255,0.7)" }}>
                 Bouton rouge: Urgence = démarrage impossible, on vient te dépanner  <p></p> Bouton vert: Régénération = réparation + recharge batterie dans notre local
