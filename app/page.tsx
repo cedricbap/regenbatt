@@ -13,30 +13,33 @@ export default function HomePage() {
           "radial-gradient(1200px 600px at 50% 20%, rgba(16,185,129,0.18), transparent 60%), linear-gradient(180deg, #0b1220 0%, #0b1220 40%, #0f172a 100%)",
       }}
     >
-      <div
+<div
   style={{
     marginTop: 18,
-    marginBottom: 12,
-    padding: "10px 14px",
-    borderRadius: 14,
+    marginBottom: 18,
+    padding: "12px 16px",
+    borderRadius: 12,
     background: "rgba(255,255,255,0.06)",
-    border: "1px solid rgba(255,255,255,0.10)",
-    color: "rgba(255,255,255,0.88)",
-    display: "flex",
-    alignItems: "center",
-    gap: 10,
+    border: "1px solid rgba(255,255,255,0.12)",
+    textAlign: "center",
+    color: "rgba(255,255,255,0.9)",
   }}
 >
-  <span style={{ fontSize: 18 }}>👇</span>
-  <div>
-    <div style={{ fontWeight: 800, fontSize: 14 }}>
-      Choisis le bouton qui correspond à ton besoin
-    </div>
-    <div style={{ fontSize: 12, color: "rgba(255,255,255,0.70)", marginTop: 2 }}>
-      Urgence = on vient te dépanner • Régénération = réparation/recharge batterie
-    </div>
+  <div style={{ fontSize: 15, fontWeight: 600 }}>
+    👇 Choisis le bouton qui correspond à ton besoin
+  </div>
+
+  <div
+    style={{
+      marginTop: 6,
+      fontSize: 13,
+      color: "rgba(255,255,255,0.7)",
+    }}
+  >
+    Urgence = on vient te dépanner • Régénération = réparation / recharge batterie
   </div>
 </div>
+
 
       <div
         style={{
