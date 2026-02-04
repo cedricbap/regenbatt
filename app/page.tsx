@@ -1,64 +1,37 @@
 import Image from "next/image";
-import Link from "next/link";
 
 export default function HomePage() {
   return (
     <main
       style={{
         minHeight: "100vh",
-        display: "grid",
-        placeItems: "center",
-        padding: "40px 16px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
         background:
-          "radial-gradient(1200px 600px at 50% 20%, rgba(16,185,129,0.18), transparent 60%), linear-gradient(180deg, #0b1220 0%, #0b1220 40%, #0f172a 100%)",
+          "radial-gradient(1200px 600px at 50% 0%, #0f3a3a 0%, #070b14 60%, #05070d 100%)",
+        padding: 24,
       }}
     >
-<div
-  style={{
-    marginTop: 18,
-    marginBottom: 18,
-    padding: "12px 16px",
-    borderRadius: 12,
-    background: "rgba(255,255,255,0.06)",
-    border: "1px solid rgba(255,255,255,0.12)",
-    textAlign: "center",
-    color: "rgba(255,255,255,0.9)",
-  }}
->
-  <div style={{ fontSize: 15, fontWeight: 600 }}>
-    👇 Choisis le bouton qui correspond à ton besoin
-  </div>
-
-  <div
-    style={{
-      marginTop: 6,
-      fontSize: 13,
-      color: "rgba(255,255,255,0.7)",
-    }}
-  >
-    Urgence = on vient te dépanner • Régénération = réparation / recharge batterie
-  </div>
-</div>
-
-
       <div
         style={{
           width: "100%",
-          maxWidth: 980,
-          borderRadius: 22,
-          background: "rgba(255,255,255,0.06)",
-          border: "1px solid rgba(255,255,255,0.10)",
-          boxShadow: "0 20px 60px rgba(0,0,0,0.35)",
-          overflow: "hidden",
+          maxWidth: 1100,
+          borderRadius: 28,
+          padding: 28,
+          background:
+            "linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02))",
+          border: "1px solid rgba(255,255,255,0.08)",
+          backdropFilter: "blur(14px)",
+          color: "#e5f6f6",
         }}
       >
-        {/* Header / Hero */}
+        {/* HEADER */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "1.1fr 0.9fr",
-            gap: 18,
-            padding: 28,
+            gridTemplateColumns: "1.2fr 1fr",
+            gap: 24,
             alignItems: "center",
           }}
         >
@@ -66,28 +39,24 @@ export default function HomePage() {
             <div
               style={{
                 display: "inline-flex",
-                gap: 10,
                 alignItems: "center",
-                padding: "8px 12px",
+                gap: 8,
+                padding: "6px 14px",
                 borderRadius: 999,
-                background: "rgba(16,185,129,0.12)",
-                border: "1px solid rgba(16,185,129,0.25)",
-                color: "#a7f3d0",
+                background: "rgba(16,185,129,0.15)",
+                color: "#6ee7b7",
                 fontSize: 13,
                 marginBottom: 14,
               }}
             >
-              <span>⚡</span>
-              <span>Service batterie 12V • Libreville</span>
+              ⚡ Service batterie 12V • Libreville
             </div>
 
             <h1
               style={{
-                margin: 0,
-                color: "white",
-                fontSize: 44,
-                letterSpacing: -0.6,
-                lineHeight: 1.05,
+                fontSize: 42,
+                margin: "0 0 8px",
+                color: "#ffffff",
               }}
             >
               RegenBatt
@@ -95,165 +64,167 @@ export default function HomePage() {
 
             <p
               style={{
-                marginTop: 10,
-                marginBottom: 0,
-                color: "rgba(255,255,255,0.78)",
+                margin: "0 0 16px",
+                color: "rgba(255,255,255,0.8)",
                 fontSize: 16,
-                lineHeight: 1.5,
               }}
             >
               Jump start d’urgence • Régénération batterie 12V
             </p>
 
-            <div style={{ marginTop: 18, display: "flex", gap: 10, flexWrap: "wrap" }}>
-              <span
-                style={{
-                  padding: "8px 10px",
-                  borderRadius: 999,
-                  background: "rgba(255,255,255,0.06)",
-                  border: "1px solid rgba(255,255,255,0.10)",
-                  color: "rgba(255,255,255,0.75)",
-                  fontSize: 13,
-                }}
-              >
-                ✅ Réponse rapide
-              </span>
-              <span
-                style={{
-                  padding: "8px 10px",
-                  borderRadius: 999,
-                  background: "rgba(255,255,255,0.06)",
-                  border: "1px solid rgba(255,255,255,0.10)",
-                  color: "rgba(255,255,255,0.75)",
-                  fontSize: 13,
-                }}
-              >
-                ✅ Prix transparents
-              </span>
-              <span
-                style={{
-                  padding: "8px 10px",
-                  borderRadius: 999,
-                  background: "rgba(255,255,255,0.06)",
-                  border: "1px solid rgba(255,255,255,0.10)",
-                  color: "rgba(255,255,255,0.75)",
-                  fontSize: 13,
-                }}
-              >
-                ✅ WhatsApp / Web
+            {/* BADGES */}
+            <div
+              style={{
+                display: "flex",
+                gap: 10,
+                flexWrap: "wrap",
+                marginBottom: 18,
+              }}
+            >
+              {["Réponse rapide", "Prix transparents", "WhatsApp / Web"].map(
+                (t) => (
+                  <div
+                    key={t}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 6,
+                      padding: "6px 12px",
+                      borderRadius: 999,
+                      background: "rgba(255,255,255,0.08)",
+                      fontSize: 13,
+                    }}
+                  >
+                    ✅ {t}
+                  </div>
+                )
+              )}
+            </div>
+
+            {/* 👇 TEXTE DE GUIDAGE (BON ENDROIT) */}
+            <div
+              style={{
+                marginBottom: 22,
+                padding: "14px 18px",
+                borderRadius: 14,
+                background: "rgba(255,255,255,0.06)",
+                border: "1px solid rgba(255,255,255,0.1)",
+                fontSize: 14,
+                color: "rgba(255,255,255,0.9)",
+              }}
+            >
+              👇 <strong>Choisis le bouton qui correspond à ton besoin</strong>
+              <br />
+              <span style={{ fontSize: 13, color: "rgba(255,255,255,0.7)" }}>
+                Urgence = on vient te dépanner • Régénération = réparation /
+                recharge batterie
               </span>
             </div>
           </div>
 
-          {/* Image */}
+          {/* IMAGE */}
           <div
             style={{
-              justifySelf: "end",
-              width: "100%",
-              maxWidth: 360,
-              borderRadius: 18,
-              background: "rgba(255,255,255,0.04)",
-              border: "1px solid rgba(255,255,255,0.10)",
-              padding: 14,
+              borderRadius: 20,
+              overflow: "hidden",
+              background:
+                "linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))",
+              padding: 12,
             }}
           >
-            <div style={{ borderRadius: 14, overflow: "hidden" }}>
-              <Image
-                src="/images/battery-hero.png"
-                alt="Batterie de voiture"
-                width={800}
-                height={600}
-                style={{ width: "100%", height: "auto", display: "block" }}
-                priority
-              />
-            </div>
-            <div style={{ marginTop: 10, color: "rgba(255,255,255,0.75)", fontSize: 13 }}>
+            <Image
+              src="/images/battery-hero.png"
+              alt="Batterie de voiture"
+              width={800}
+              height={600}
+              priority
+              style={{
+                width: "100%",
+                height: "auto",
+                borderRadius: 14,
+                display: "block",
+              }}
+            />
+            <div
+              style={{
+                marginTop: 10,
+                fontSize: 13,
+                color: "rgba(255,255,255,0.75)",
+              }}
+            >
               🔋 Diagnostic + intervention rapide
             </div>
           </div>
         </div>
 
-        {/* Actions */}
+        {/* ACTIONS */}
         <div
           style={{
-            padding: 28,
-            paddingTop: 0,
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
-            gap: 14,
+            gap: 18,
+            marginTop: 28,
           }}
         >
-          <Link
-            href="/urgence"
+          {/* URGENCE */}
+          <div
             style={{
-              textDecoration: "none",
-              display: "block",
-              borderRadius: 16,
-              padding: 18,
-              background: "linear-gradient(135deg, #ef4444 0%, #b91c1c 100%)",
-              color: "white",
-              boxShadow: "0 18px 40px rgba(239,68,68,0.25)",
-              border: "1px solid rgba(255,255,255,0.12)",
+              background:
+                "linear-gradient(135deg, #ef4444 0%, #dc2626 100%)",
+              borderRadius: 20,
+              padding: 22,
+              color: "#fff",
+              boxShadow: "0 20px 40px rgba(239,68,68,0.35)",
             }}
           >
-            <div style={{ fontSize: 14, opacity: 0.9 }}>🚨 Batterie à plat</div>
-            <div style={{ fontSize: 20, fontWeight: 800, marginTop: 6 }}>
+            <div style={{ fontSize: 13, opacity: 0.9 }}>
+              🚨 Batterie à plat
+            </div>
+            <div style={{ fontSize: 22, fontWeight: 700, margin: "8px 0" }}>
               Intervention en urgence — 10 000 FCFA
             </div>
-            <div style={{ fontSize: 13, opacity: 0.9, marginTop: 8 }}>
+            <div style={{ fontSize: 14, opacity: 0.9 }}>
               Tu envoies ta position, on te rejoint.
             </div>
-          </Link>
+          </div>
 
-          <Link
-            href="/regeneration"
+          {/* REGEN */}
+          <div
             style={{
-              textDecoration: "none",
-              display: "block",
-              borderRadius: 16,
-              padding: 18,
-              background: "linear-gradient(135deg, #10b981 0%, #065f46 100%)",
-              color: "white",
-              boxShadow: "0 18px 40px rgba(16,185,129,0.18)",
-              border: "1px solid rgba(255,255,255,0.12)",
+              background:
+                "linear-gradient(135deg, #10b981 0%, #059669 100%)",
+              borderRadius: 20,
+              padding: 22,
+              color: "#fff",
+              boxShadow: "0 20px 40px rgba(16,185,129,0.35)",
             }}
           >
-            <div style={{ fontSize: 14, opacity: 0.92 }}>🔋 Régénération batterie</div>
-            <div style={{ fontSize: 20, fontWeight: 800, marginTop: 6 }}>
+            <div style={{ fontSize: 13, opacity: 0.9 }}>
+              🔋 Régénération batterie
+            </div>
+            <div style={{ fontSize: 22, fontWeight: 700, margin: "8px 0" }}>
               8 000 FCFA
             </div>
-            <div style={{ fontSize: 13, opacity: 0.9, marginTop: 8 }}>
-              Choisis le jour pour venir déposer ta batterie
+            <div style={{ fontSize: 14, opacity: 0.9 }}>
+              Choisis le jour pour venir déposer ta batterie.
             </div>
-          </Link>
+          </div>
         </div>
 
-        {/* Footer */}
+        {/* FOOTER */}
         <div
           style={{
-            padding: 22,
-            borderTop: "1px solid rgba(255,255,255,0.10)",
+            marginTop: 28,
             display: "flex",
             justifyContent: "space-between",
-            alignItems: "center",
-            gap: 12,
-            flexWrap: "wrap",
+            fontSize: 14,
+            color: "rgba(255,255,255,0.7)",
           }}
         >
-          <Link
-            href="/contact"
-            style={{
-              color: "rgba(255,255,255,0.85)",
-              textDecoration: "underline",
-              textUnderlineOffset: 4,
-            }}
-          >
+          <a href="/contact" style={{ color: "#fff" }}>
             À propos & Contact
-          </Link>
-
-          <div style={{ color: "rgba(255,255,255,0.65)", fontSize: 13 }}>
-            © {new Date().getFullYear()} RegenBatt
-          </div>
+          </a>
+          <div>© 2026 RegenBatt</div>
         </div>
       </div>
     </main>
