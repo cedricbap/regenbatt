@@ -131,7 +131,7 @@ export default function HomePage() {
           >
             <div style={{ borderRadius: 14, overflow: "hidden" }}>
               <Image
-                src="/images/2Batteries.png"
+                src="public/2Batteries.png"
                 alt="Batterie de voiture"
                 width={800}
                 height={600}
