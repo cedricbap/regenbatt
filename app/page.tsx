@@ -14,6 +14,31 @@ export default function HomePage() {
       }}
     >
       <div
+  style={{
+    marginTop: 18,
+    marginBottom: 12,
+    padding: "10px 14px",
+    borderRadius: 14,
+    background: "rgba(255,255,255,0.06)",
+    border: "1px solid rgba(255,255,255,0.10)",
+    color: "rgba(255,255,255,0.88)",
+    display: "flex",
+    alignItems: "center",
+    gap: 10,
+  }}
+>
+  <span style={{ fontSize: 18 }}>👇</span>
+  <div>
+    <div style={{ fontWeight: 800, fontSize: 14 }}>
+      Choisis le bouton qui correspond à ton besoin
+    </div>
+    <div style={{ fontSize: 12, color: "rgba(255,255,255,0.70)", marginTop: 2 }}>
+      Urgence = on vient te dépanner • Régénération = réparation/recharge batterie
+    </div>
+  </div>
+</div>
+
+      <div
         style={{
           width: "100%",
           maxWidth: 980,
