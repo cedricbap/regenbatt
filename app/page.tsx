@@ -133,7 +133,7 @@ export default function HomePage() {
             }}
           >
             <Image
-              src="/images/battery-hero.png"
+              src="/images/services.png"
               alt="Batterie de voiture"
               width={800}
               height={600}
