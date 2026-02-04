@@ -202,7 +202,7 @@ export default function HomePage() {
               🔋 Régénération batterie
             </div>
             <div style={{ fontSize: 22, fontWeight: 700, margin: "8px 0" }}>
-              8 000 FCFA
+             Réparation + recharge batterie — 8 000 FCFA
             </div>
             <div style={{ fontSize: 14, opacity: 0.9 }}>
               Choisis la date et l'heure pour venir déposer ta batterie. La régénération dure quelques heures.
