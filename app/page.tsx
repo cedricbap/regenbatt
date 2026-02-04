@@ -132,7 +132,7 @@ export default function HomePage() {
             }}
           >
             <Image
-              src="/images/Battservices.png"
+              src="/images/imagefinale.png"
               alt="Batterie de voiture"
               width={800}
               height={600}
