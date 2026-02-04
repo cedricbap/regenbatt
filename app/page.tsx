@@ -113,7 +113,7 @@ export default function HomePage() {
                 color: "rgba(255,255,255,0.9)",
               }}
             >
-              👇 <strong>Choisis le bouton qui correspond à ton besoin</strong>
+              👇 <strong>Clique le bouton qui correspond à ton besoin</strong>
               <br />
               <span style={{ fontSize: 13, color: "rgba(255,255,255,0.7)" }}>
                 Bouton rouge: Urgence = démarrage impossible, on vient te dépanner  <p></p> Bouton vert: Régénération = réparation + recharge batterie dans notre local
@@ -183,7 +183,7 @@ export default function HomePage() {
               Démarrage forcé en urgence — 10 000 FCFA
             </div>
             <div style={{ fontSize: 14, opacity: 0.9 }}>
-              Tu envoies ta position, on te rejoint.
+              Indique ta position et on te rejoint.
             </div>
           </div>
 
